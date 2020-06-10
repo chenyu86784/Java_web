@@ -4,7 +4,7 @@
 * v2.0 进行最初成品测试 稳定性测试 该项目可平稳运行
 
 # 开发环境
-MyEclipse 10
-Mysql 5.5
-Jdk 1.6
+MyEclipse 10  
+Mysql 5.5  
+Jdk 1.6  
 Tomcat 7.0
