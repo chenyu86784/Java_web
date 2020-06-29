@@ -14,7 +14,7 @@ padding: 0;
 .content {
 width: 500px; 
 height: 300px;
-background: #FFB6C1;
+background:#00FFFF;
 margin: 0 auto; /*水平居中*/
 position: relative;
 top: 508;
@@ -46,9 +46,9 @@ text-align:center
 </style>
   </head>
   
-  <body bgcolor="#FFB6C1">
+  <body bgcolor="#40E0D0">
 
- <center><font size="15" color="red">欢迎来到上帝模式！</font></center> 
+ <center><font size="15" color="#FFA500">欢迎来到上帝模式！</font></center> 
  <div class="center">
  <form action="god.jsp" autocomplete="off">
  <br>
@@ -189,12 +189,42 @@ text-align:center
       }catch (Exception e) {        
             //out.print("数据库连接异常！请联系网站管理员");  
         }  
- 
  %>
- 
- 
- 
- 
+ <hr>
+ <center><font size="12" color="#FFA500">网站注册用户信息</font></center>
+<%
+  
+   try {  
+            Class.forName("com.mysql.jdbc.Driver");  ////驱动程序名
+            String url = "jdbc:mysql://127.0.0.1:3306/cloudcompute"; //数据库名
+            String username = "root";  //数据库用户名
+            String password = "123456";  //数据库用户密码
+            Connection conn = DriverManager.getConnection(url, username, password);  //连接状态
+			Statement st;
+			st=conn.createStatement();			
+			String selectStr="select * from user_info";
+			System.out.println(selectStr);
+		    ResultSet result=null;
+		    result=st.executeQuery(selectStr);
+		    String names="";
+		    while (result.next()){
+			out.println("姓名："+result.getString("name"));
+			out.println("uid："+result.getString("uid"));
+			out.println("密码："+result.getString("passwd"));
+			out.println("邮箱："+result.getString("email"));			
+			out.println("电话："+result.getString("phone"));
+			out.println("学历："+result.getString("stu"));
+			out.println("资产："+result.getString("money")+"<br>");
+			}  
+			st.close();
+		    
+  		}catch (Exception e) {        
+            out.print("数据库连接异常！请联系网站管理员");  
+        }  
+		
+  
+  
+   %>
  
  
 

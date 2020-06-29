@@ -61,7 +61,7 @@ font-size:30px
             Connection conn = DriverManager.getConnection(url, username, password);  //连接状态
 			Statement st;
 			st=conn.createStatement();			
-			String selectStr="select * from user where uid="+"'"+user+"'"+" and passwd="+"'"+passwd+"'";
+			String selectStr="select * from user_info where uid="+"'"+user+"'"+" and passwd="+"'"+passwd+"'";
 			System.out.print(selectStr+"\n");
 		    ResultSet result=null;
 		    result=st.executeQuery(selectStr);		

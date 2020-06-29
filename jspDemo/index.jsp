@@ -13,9 +13,6 @@
 	text-align:right
 
 }
-
-
-
 </style>
 
 <link rel="stylesheet" href="css/style3.css">
